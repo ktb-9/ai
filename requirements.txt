@@ -1,0 +1,7 @@
+flask
+flask-cors
+pyngrok
+transformers
+accelerate
+torch
+git+https://github.com/huggingface/diffusers.git
