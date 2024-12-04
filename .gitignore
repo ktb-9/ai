@@ -1,0 +1,40 @@
+# Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Virtual environment directories
+venv/
+env/
+.venv/
+
+# Distribution / packaging directories
+build/
+dist/
+*.egg-info/
+
+# .env 파일 (API 키 등 민감한 정보가 포함될 수 있음)
+.env
+
+# VSCode 설정 파일
+.vscode/
+
+# Jupyter Notebook 체크포인트
+.ipynb_checkpoints/
+
+# PyCharm 설정 파일
+.idea/
+
+# 로그 파일
+*.log
+
+# OS에서 생성된 파일들 (macOS와 Windows에서 생성될 수 있음)
+.DS_Store
+Thumbs.db
+
+# 기타
+*.sqlite3
+*.pkl
+*.db
+
+main.py
+test.ipynb
