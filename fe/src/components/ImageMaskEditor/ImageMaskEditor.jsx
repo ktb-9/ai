@@ -2,32 +2,49 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const ImageMaskEditor = () => {
   const canvasRef = useRef(null);
+  const maskCanvasRef = useRef(null);
+  const displayCanvasRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [brushSize, setBrushSize] = useState(20);
   const [image, setImage] = useState(null);
   const [prompt, setPrompt] = useState('');
   const [error, setError] = useState(null);
-  
-  // 별도의 마스크 캔버스 추가
-  const maskCanvasRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [scale, setScale] = useState(1);
 
   useEffect(() => {
     if (image) {
-      const canvas = canvasRef.current;
-      const maskCanvas = maskCanvasRef.current;
-      const ctx = canvas.getContext('2d');
-      const maskCtx = maskCanvas.getContext('2d');
-      
       const img = new Image();
       img.onload = () => {
-        // 메인 캔버스 설정
+        // 원본 크기의 캔버스 설정
+        const canvas = canvasRef.current;
+        const maskCanvas = maskCanvasRef.current;
+        const displayCanvas = displayCanvasRef.current;
+        
+        // 원본 크기 유지
         canvas.width = img.width;
         canvas.height = img.height;
-        ctx.drawImage(img, 0, 0);
-        
-        // 마스크 캔버스 설정
         maskCanvas.width = img.width;
         maskCanvas.height = img.height;
+        
+        // 화면에 표시될 크기 계산
+        const maxWidth = window.innerWidth * 0.8;
+        const maxHeight = window.innerHeight * 0.8;
+        const scale = Math.min(maxWidth / img.width, maxHeight / img.height);
+        setScale(scale);
+        
+        // 디스플레이 캔버스 크기 설정
+        displayCanvas.width = img.width * scale;
+        displayCanvas.height = img.height * scale;
+        
+        // 이미지 그리기
+        const ctx = canvas.getContext('2d');
+        const displayCtx = displayCanvas.getContext('2d');
+        const maskCtx = maskCanvas.getContext('2d');
+        
+        ctx.drawImage(img, 0, 0);
+        displayCtx.drawImage(img, 0, 0, displayCanvas.width, displayCanvas.height);
+        
         maskCtx.fillStyle = 'black';
         maskCtx.fillRect(0, 0, maskCanvas.width, maskCanvas.height);
       };
@@ -35,10 +52,71 @@ const ImageMaskEditor = () => {
     }
   }, [image]);
 
-  const handleImageUpload = (e) => {
-    if (e.target.files && e.target.files[0]) {
-      setImage(e.target.files[0]);
+  const draw = (e) => {
+    if (!isDrawing) return;
+
+    const displayCanvas = displayCanvasRef.current;
+    const canvas = canvasRef.current;
+    const maskCanvas = maskCanvasRef.current;
+    const rect = displayCanvas.getBoundingClientRect();
+    
+    // 마우스 위치를 원본 크기로 변환
+    const x = (e.clientX - rect.left) / scale;
+    const y = (e.clientY - rect.top) / scale;
+
+    const ctx = canvas.getContext('2d');
+    const displayCtx = displayCanvas.getContext('2d');
+    const maskCtx = maskCanvas.getContext('2d');
+
+    const actualBrushSize = brushSize / scale;
+
+    // 마스크에 그리기
+    maskCtx.fillStyle = 'white';
+    maskCtx.beginPath();
+    maskCtx.arc(x, y, actualBrushSize / 2, 0, Math.PI * 2);
+    maskCtx.fill();
+
+    // 표시용 오버레이 그리기
+    displayCtx.fillStyle = 'rgba(255, 0, 0, 0.3)';
+    displayCtx.beginPath();
+    displayCtx.arc(x * scale, y * scale, brushSize / 2, 0, Math.PI * 2);
+    displayCtx.fill();
+  };
+
+  const handleSubmit = async () => {
+    if (!image || !prompt.trim()) {
+      setError('Please select an image and enter a prompt');
+      return;
+    }
+
+    try {
+      setIsLoading(true);
       setError(null);
+
+      const maskCanvas = maskCanvasRef.current;
+      const maskData = maskCanvas.toDataURL('image/png').split(',')[1];
+
+      const formData = new FormData();
+      formData.append('image', image);
+      formData.append('prompt', prompt.trim());
+      formData.append('mask_data', maskData);
+
+      const response = await fetch('http://localhost:8000/api/edit-image', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!response.ok) {
+        throw new Error(await response.text());
+      }
+
+      const blob = await response.blob();
+      setImage(blob);
+    } catch (error) {
+      console.error('Error:', error);
+      setError(error.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -51,73 +129,19 @@ const ImageMaskEditor = () => {
     setIsDrawing(false);
   };
 
-  const draw = (e) => {
-    if (!isDrawing) return;
-
-    const canvas = canvasRef.current;
-    const maskCanvas = maskCanvasRef.current;
-    const rect = canvas.getBoundingClientRect();
-    const ctx = canvas.getContext('2d');
-    const maskCtx = maskCanvas.getContext('2d');
-    
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    // 메인 캔버스에 시각적 피드백
-    ctx.fillStyle = 'rgba(255, 0, 0, 0.3)';
-    ctx.beginPath();
-    ctx.arc(x, y, brushSize / 2, 0, Math.PI * 2);
-    ctx.fill();
-
-    // 마스크 캔버스에 실제 마스크 그리기
-    maskCtx.fillStyle = 'white';
-    maskCtx.beginPath();
-    maskCtx.arc(x, y, brushSize / 2, 0, Math.PI * 2);
-    maskCtx.fill();
-  };
-
-  const handleSubmit = async () => {
-    try {
-      setError(null);
-      
-      // 마스크 데이터 최적화: 압축된 PNG로 변환
-      const maskCanvas = maskCanvasRef.current;
-      const maskData = maskCanvas.toDataURL('image/png', 0.5).split(',')[1];
-
-      const formData = new FormData();
-      formData.append('image', image);
-      formData.append('prompt', prompt);
-      formData.append('mask_data', maskData);
-
-      console.log('Sending mask data...');
-
-      const response = await fetch('http://localhost:8000/api/edit-image', {
-        method: 'POST',
-        body: formData
-      });
-
-      if (response.ok) {
-        const blob = await response.blob();
-        const imageUrl = URL.createObjectURL(blob);
-        setImage(await fetch(imageUrl).then(r => r.blob()));
-      } else {
-        const errorData = await response.text();
-        console.error('Server error:', errorData);
-        setError(`Server error: ${errorData}`);
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      setError('Failed to process image');
-    }
-  };
-
   return (
     <div className="flex flex-col gap-4 p-4 items-center">
       <div className="flex gap-4 items-center mb-4">
         <input
           type="file"
           accept="image/*"
-          onChange={handleImageUpload}
+          onChange={(e) => {
+            if (e.target.files?.[0]) {
+              setImage(e.target.files[0]);
+              setError(null);
+              setPrompt('');
+            }
+          }}
           className="p-2 border rounded"
         />
         <input
@@ -125,7 +149,7 @@ const ImageMaskEditor = () => {
           placeholder="Enter prompt"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
-          className="p-2 border rounded"
+          className="p-2 border rounded w-64"
         />
         <div className="flex items-center gap-2">
           <span>Brush Size:</span>
@@ -140,35 +164,31 @@ const ImageMaskEditor = () => {
         </div>
       </div>
 
-      {error && (
-        <div className="text-red-500 mb-4">{error}</div>
-      )}
+      {error && <div className="text-red-500 mb-4">{error}</div>}
 
       <div className="relative border border-gray-300 rounded">
         <canvas
-          ref={canvasRef}
+          ref={displayCanvasRef}
           onMouseDown={startDrawing}
           onMouseMove={draw}
           onMouseUp={stopDrawing}
           onMouseOut={stopDrawing}
           className="cursor-crosshair"
         />
-        <canvas
-          ref={maskCanvasRef}
-          className="absolute inset-0 opacity-0 pointer-events-none"  // 숨겨진 마스크 캔버스
-        />
+        <canvas ref={canvasRef} className="hidden" />
+        <canvas ref={maskCanvasRef} className="hidden" />
       </div>
 
       <button
         onClick={handleSubmit}
-        disabled={!image}
+        disabled={!image || isLoading}
         className={`px-4 py-2 rounded ${
-          image 
+          image && !isLoading
             ? 'bg-blue-500 text-white hover:bg-blue-600' 
             : 'bg-gray-300 text-gray-500'
         }`}
       >
-        Edit Image
+        {isLoading ? 'Processing...' : 'Edit Image'}
       </button>
     </div>
   );

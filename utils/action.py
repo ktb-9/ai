@@ -1,78 +1,119 @@
-import streamlit as st
+from typing import List, Optional, Dict, Any
+from PIL import Image
+import numpy as np
 
-def backward_inference_image():
+class ImageStateManager:
     """
-    이전 이미지 상태로 되돌리는 함수
-    - 현재 이미지 상태가 0보다 크면 이전 상태로 이동
-    - 첫 번째 이미지인 경우 토스트 메시지 표시
+    이미지 상태 관리 클래스
+    Streamlit의 session_state를 대체하여 이미지 편집 상태를 관리
     """
-    if st.session_state["image_state"] > 0:
-        # 이미지 상태 인덱스를 1 감소
-        st.session_state["image_state"] -= 1
-        # 좌표 정보 초기화
-        st.session_state["num_coord"] = 0
-    else:
-        # 첫 번째 이미지일 때 메시지 표시
-        st.toast('This is First Image!')
-    
-def forward_inference_image():
-    """
-    다음 이미지 상태로 이동하는 함수
-    - 다음 상태가 존재하는 경우 다음 상태로 이동
-    - 마지막 이미지인 경우 토스트 메시지 표시
-    - 캔버스 상태도 함께 초기화
-    """
-    if len(st.session_state["inference_image"]) - 1 > st.session_state["image_state"]:
-        # 이미지 상태 인덱스를 1 증가
-        st.session_state["image_state"] += 1
-        # 좌표 정보 초기화
-        st.session_state["num_coord"] = 0
-        
-        # 캔버스 객체가 존재하는 경우 캔버스 초기화
-        if "canvas" in st.session_state and st.session_state["canvas"] is not None:
-            try:
-                if 'raw' in st.session_state["canvas"]:
-                    st.session_state["canvas"]['raw']["objects"] = []
-            except Exception as e:
-                st.error(f"Error handling canvas state: {str(e)}")
-    else:
-        # 마지막 이미지일 때 메시지 표시
-        st.toast('This is Last Image!')
+    def __init__(self, initial_image: Optional[Image.Image] = None):
+        self.state = {
+            "inference_image": [initial_image] if initial_image else [],
+            "image_state": 0,
+            "num_coord": 0,
+            "sam_image": None,
+            "mask": None,
+            "coord": False,
+            "freedraw": False,
+            "canvas": None,
+            "text": ""
+        }
+
+    def backward_inference_image(self) -> Dict[str, Any]:
+        """
+        이전 이미지 상태로 되돌리는 함수
+        Returns:
+            Dict: 현재 상태 정보를 담은 딕셔너리
+        """
+        if self.state["image_state"] > 0:
+            self.state["image_state"] -= 1
+            self.state["num_coord"] = 0
+            return {"status": "success", "message": "Moved to previous image"}
+        return {"status": "warning", "message": "This is First Image!"}
+
+    def forward_inference_image(self) -> Dict[str, Any]:
+        """
+        다음 이미지 상태로 이동하는 함수
+        Returns:
+            Dict: 현재 상태 정보를 담은 딕셔너리
+        """
+        if len(self.state["inference_image"]) - 1 > self.state["image_state"]:
+            self.state["image_state"] += 1
+            self.state["num_coord"] = 0
             
-def reset_inference_image():
-    """
-    이미지 상태를 초기 상태로 리셋하는 함수
-    - 이미지 리스트를 첫 번째 이미지만 남기고 초기화
-    - 이미지 상태와 좌표 정보도 초기화
-    """
-    # 이미지 리스트를 첫 번째 이미지만 남기고 초기화
-    st.session_state["inference_image"] = [st.session_state["inference_image"][0]]
-    # 이미지 상태를 0으로 초기화
-    st.session_state["image_state"] = 0
-    # 좌표 정보 초기화
-    st.session_state["num_coord"] = 0
-    
-def reset_text():
-    """
-    텍스트 입력을 초기화하는 함수
-    - 텍스트 상태를 빈 문자열로 초기화
-    """
-    st.session_state["text"] = ""
-    
-def reset_coord():
-    """
-    좌표 및 관련 상태를 초기화하는 함수
-    - 캔버스 상태 삭제
-    - 세그멘테이션 관련 상태 초기화
-    - 좌표 정보 초기화
-    """
-    # 캔버스 상태가 존재하면 삭제
-    if "canvas" in st.session_state:
-        del st.session_state["canvas"]
-    
-    # 관련 상태 변수들 초기화
-    st.session_state["num_coord"] = 0          # 좌표 개수 초기화
-    st.session_state["sam_image"] = None       # 세그멘테이션 이미지 초기화
-    st.session_state["mask"] = None            # 마스크 초기화
-    st.session_state["coord"] = False          # 좌표 존재 여부 초기화
-    st.session_state["freedraw"] = False       # 자유 그리기 모드 상태 초기화
+            if self.state["canvas"] is not None:
+                try:
+                    if 'raw' in self.state["canvas"]:
+                        self.state["canvas"]['raw']["objects"] = []
+                except Exception as e:
+                    return {"status": "error", "message": f"Error handling canvas state: {str(e)}"}
+            return {"status": "success", "message": "Moved to next image"}
+        return {"status": "warning", "message": "This is Last Image!"}
+
+    def reset_inference_image(self) -> Dict[str, Any]:
+        """
+        이미지 상태를 초기 상태로 리셋하는 함수
+        Returns:
+            Dict: 현재 상태 정보를 담은 딕셔너리
+        """
+        if len(self.state["inference_image"]) > 0:
+            self.state["inference_image"] = [self.state["inference_image"][0]]
+            self.state["image_state"] = 0
+            self.state["num_coord"] = 0
+            return {"status": "success", "message": "Image state reset successfully"}
+        return {"status": "warning", "message": "No images to reset"}
+
+    def reset_text(self) -> Dict[str, Any]:
+        """
+        텍스트 입력을 초기화하는 함수
+        Returns:
+            Dict: 현재 상태 정보를 담은 딕셔너리
+        """
+        self.state["text"] = ""
+        return {"status": "success", "message": "Text reset successfully"}
+
+    def reset_coord(self) -> Dict[str, Any]:
+        """
+        좌표 및 관련 상태를 초기화하는 함수
+        Returns:
+            Dict: 현재 상태 정보를 담은 딕셔너리
+        """
+        if "canvas" in self.state:
+            self.state["canvas"] = None
+
+        self.state["num_coord"] = 0
+        self.state["sam_image"] = None
+        self.state["mask"] = None
+        self.state["coord"] = False
+        self.state["freedraw"] = False
+        return {"status": "success", "message": "Coordinates reset successfully"}
+
+    def get_current_image(self) -> Optional[Image.Image]:
+        """
+        현재 상태의 이미지를 반환하는 함수
+        Returns:
+            Optional[Image.Image]: 현재 이미지 또는 None
+        """
+        if self.state["inference_image"] and len(self.state["inference_image"]) > self.state["image_state"]:
+            return self.state["inference_image"][self.state["image_state"]]
+        return None
+
+    def add_image(self, image: Image.Image) -> Dict[str, Any]:
+        """
+        새로운 이미지를 상태에 추가하는 함수
+        Args:
+            image (Image.Image): 추가할 이미지
+        Returns:
+            Dict: 현재 상태 정보를 담은 딕셔너리
+        """
+        self.state["inference_image"].append(image)
+        return {"status": "success", "message": "Image added successfully"}
+
+    def get_state(self) -> Dict[str, Any]:
+        """
+        현재 전체 상태를 반환하는 함수
+        Returns:
+            Dict: 현재 상태 정보를 담은 딕셔너리
+        """
+        return self.state

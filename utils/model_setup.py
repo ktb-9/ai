@@ -1,5 +1,6 @@
 import os
 import torch
+import tritonclient.http
 from functools import lru_cache
 from diffusers import (
     StableDiffusionInstructPix2PixPipeline, 
@@ -23,7 +24,6 @@ def get_triton_client():
 def get_sd_inpaint():
     """Stable Diffusion Inpainting 모델 로드 및 캐싱"""
     print("Stable Diffusion Inpaint setup!")
-    device = get_device()
     
     pipe = StableDiffusionInpaintPipeline.from_pretrained(
         "stabilityai/stable-diffusion-2-inpainting",
@@ -39,7 +39,6 @@ def get_sd_inpaint():
 def get_lama_cleaner():
     """LaMa Cleaner 모델 로드 및 캐싱"""
     print("lama cleaner setup!")
-    device = get_device()
     
     LAMA_MODEL_URL = os.environ.get(
         "LAMA_MODEL_URL",
@@ -54,8 +53,7 @@ def get_lama_cleaner():
 def get_instruct_pix2pix():
     """Instruct Pix2Pix 모델 로드 및 캐싱"""
     print("Instruct Pix2Pix setup!")
-    device = get_device()
-    
+        
     pipe = StableDiffusionInstructPix2PixPipeline.from_pretrained(
         "timbrooks/instruct-pix2pix",
         torch_dtype=torch.float16 if device == "cuda" else torch.float32,

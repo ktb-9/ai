@@ -34,8 +34,8 @@ def image_editor_agent():
         # LLM(Language Learning Model) 설정
         llm=ChatOpenAI(
             temperature=0,          # 창의성 낮게 설정 (결정적인 응답 위해)
-            model_name="gpt-4o-mini",  # GPT-3.5 Turbo 모델 사용
-            request_timeout=120     # 타임아웃 120초 설정
+            model_name="gpt-4", 
+            request_timeout=300
         ),
         
         # 최대 반복 횟수를 1로 제한 (한 번의 시도만 허용)

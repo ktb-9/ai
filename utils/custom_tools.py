@@ -1,206 +1,170 @@
-# 필요한 라이브러리 임포트
 import sys
 sys.path.append('Grounded-Segment-Anything')
 sys.path.append('Grounded-Segment-Anything/EfficientSAM')
 
 import os
-import shutil
-import streamlit as st
+import logging
 from pydantic import BaseModel, Field
-from typing import Optional, Type
+from typing import Optional, Type, Dict, Any, List
 import numpy as np
 import torch
 from PIL import Image
 from langchain.tools import BaseTool
+from contextlib import contextmanager
 
-# 커스텀 유틸리티 함수 임포트
 from utils.inference import (
-    instruct_pix2pix,    # 이미지 변환 모델
-    sd_inpaint,          # 인페인팅 모델
-    lama_cleaner         # 객체 제거 모델
+    instruct_pix2pix,
+    sd_inpaint,
+    lama_cleaner
 )
 from utils.util import dilate_mask
 from utils.device_utils import get_device
-from typing import ClassVar
 
-def log_debug(message):
-    """
-    디버깅 메시지를 Streamlit UI에 출력하는 헬퍼 함수
-    Args:
-        message: 출력할 디버그 메시지
-    """
-    st.write(f"Debug: {message}")
+# [수정] 로깅 설정 개선
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('image_editor.log'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
 
-def image_transform(pil_image, prompt):
+# [추가] CUDA 메모리 관리
+@contextmanager
+def cuda_memory_manager():
     try:
-        log_debug(f"Starting image transform with prompt: {prompt}")
-        
-        if st.session_state.get("coord", False):
-            # 영역이 선택된 경우
-            if "mask" not in st.session_state or st.session_state["mask"] is None:
-                st.error("No mask available for processing")
-                return None
-                
-            mask = Image.fromarray(st.session_state["mask"].squeeze())
-            
-            # 프롬프트에 따라 인페인팅 또는 변환 선택
-            if any(word in prompt.lower() for word in ["remove", "erase", "delete", "clean"]):
-                transform_pillow = sd_inpaint(pil_image, mask, "remove this")
-            else:
-                # 선택 영역 내 이미지 변환
-                transform_pillow = sd_inpaint(pil_image, mask, prompt)
-        else:
-            # 전체 이미지 변환
-            transform_pillow = instruct_pix2pix(pil_image, prompt)[0]
-            
-        return transform_pillow
-        
-    except Exception as e:
-        st.error(f"Error in image_transform: {str(e)}")
-        return None
-
-def object_erase(image, mask, device):
-    """
-    이미지에서 객체를 제거하는 함수
-    
-    Args:
-        image: 처리할 이미지 (numpy array)
-        mask: 제거할 영역의 마스크
-        device: 사용할 장치 (CPU/GPU)
-    
-    Returns:
-        처리된 PIL 이미지 또는 에러 시 None
-    """
-    try:
-        log_debug("Starting object erase operation...")
-        device = get_device()
-        
-        # GPU 메모리 정리
-        if device == "cuda":
+        yield
+    finally:
+        if torch.cuda.is_available():
             torch.cuda.empty_cache()
-            
-        transform_pillow = lama_cleaner(image, mask, device)
+
+# [수정] 상태 관리 클래스 개선
+class ImageState:
+    def __init__(self):
+        self._state: Dict[str, Any] = {
+            "inference_image": [],
+            "image_state": 0,
+            "mask": None,
+            "coord": False,
+            "freedraw": False
+        }
+    
+    @property
+    def current_image(self) -> Optional[Image.Image]:
+        images = self._state.get("inference_image", [])
+        current_state = self._state.get("image_state", 0)
+        return images[current_state] if images and len(images) > current_state else None
+
+    def get(self, key: str, default: Any = None) -> Any:
+        return self._state.get(key, default)
+    
+    def set(self, key: str, value: Any) -> None:
+        if key not in self._state:
+            raise KeyError(f"Invalid state key: {key}")
+        self._state[key] = value
         
-        if transform_pillow is None:
-            raise Exception("Failed to process image with lama_cleaner")
-            
-        log_debug("Object erase completed successfully")
-        return transform_pillow
+    def update_image(self, image: Image.Image) -> None:
+        self._state["inference_image"].append(image)
+        self._state["image_state"] = len(self._state["inference_image"]) - 1
+
+image_state = ImageState()
+
+# [수정] 이미지 변환 함수 개선
+def image_transform(pil_image: Image.Image, prompt: str) -> Optional[Image.Image]:
+    try:
+        logger.debug(f"Starting image transform with prompt: {prompt}")
         
+        with cuda_memory_manager():
+            if image_state.get("coord"):
+                mask = image_state.get("mask")
+                if mask is None:
+                    raise ValueError("No mask available")
+                    
+                mask_image = Image.fromarray(mask.squeeze())
+                remove_keywords = ["remove", "erase", "delete", "clean"]
+                prompt_final = "remove this" if any(word in prompt.lower() for word in remove_keywords) else prompt
+                
+                return sd_inpaint(pil_image, mask_image, prompt_final)
+            
+            result = instruct_pix2pix(pil_image, prompt)
+            return result[0] if result else None
+            
     except Exception as e:
-        st.error(f"Error in object_erase: {str(e)}")
-        import traceback
-        st.error(f"Full error: {traceback.format_exc()}")
-        return None
+        logger.error("Image transform failed", exc_info=e)
+        raise
 
-# Pydantic 모델 - 입력 유효성 검사용
-class ImageTransformCheckInput(BaseModel):
-    """이미지 변환 입력 검증을 위한 Pydantic 모델"""
-    prompt: str = Field(..., description="prompt for transform the image")
+# [수정] 객체 제거 함수 개선
+def object_erase(image: np.ndarray, mask: np.ndarray, device: Optional[str] = None) -> Image.Image:
+    try:
+        logger.debug("Starting object erase operation")
+        device = device or get_device()
+        
+        with cuda_memory_manager():
+            result = lama_cleaner(image, mask, device)
+            if result is None:
+                raise RuntimeError("Lama cleaner processing failed")
+            return result
+            
+    except Exception as e:
+        logger.error("Object erase failed", exc_info=e)
+        raise
 
+# [수정] 입력 검증 모델 개선
+class ImageTransformInput(BaseModel):
+    prompt: str = Field(..., description="Transform prompt", min_length=1)
+
+# [수정] 이미지 변환 도구 개선
 class ImageTransformTool(BaseTool):
-    """
-    이미지 변환을 위한 LangChain 도구
-    - 이미지 스타일 변경
-    - 객체 대체/추가
-    """
     name: str = "image_transform"
-    description: str = """
-    Please use this tool when you want to change the image style or replace, add specific objects with something else.
-    """
+    description: str = "Transform image style or replace/add objects"
+    args_schema: Type[BaseModel] = ImageTransformInput
     return_direct: bool = True
     
-    def _run(self, prompt: str):
-        """
-        이미지 변환 실행 함수
-        Args:
-            prompt: 변환 지시사항
-        Returns:
-            변환된 이미지 또는 에러 시 None
-        """
+    def _run(self, prompt: str) -> Image.Image:
         try:
-            log_debug(f"Running ImageTransformTool with prompt: {prompt}")
+            logger.debug(f"Running transform with prompt: {prompt}")
             
-            # 세션 상태 검증
-            if "inference_image" not in st.session_state or "image_state" not in st.session_state:
-                raise ValueError("No image loaded in session state")
+            image = image_state.current_image
+            if image is None:
+                raise ValueError("No image loaded")
                 
-            pil_image = st.session_state["inference_image"][st.session_state["image_state"]]
-            transform_pillow = image_transform(pil_image, prompt)
-            
-            if transform_pillow is None:
-                raise Exception("Image transformation failed")
-                
-            log_debug("ImageTransformTool completed successfully")
-            return transform_pillow
+            return image_transform(image, prompt)
             
         except Exception as e:
-            st.error(f"Error in ImageTransformTool: {str(e)}")
-            import traceback
-            st.error(f"Full error: {traceback.format_exc()}")
-            return None
-    
+            logger.error("Transform tool failed", exc_info=e)
+            raise
+
     def _arun(self, query: str):
-        """비동기 실행은 지원하지 않음"""
-        raise NotImplementedError("This tool does not support async")
+        raise NotImplementedError("Async not supported")
 
-    args_schema: Optional[Type[BaseModel]] = ImageTransformCheckInput
-
+# [수정] 객체 제거 도구 개선
 class ObjectEraseTool(BaseTool):
-    """
-    이미지에서 객체를 제거하기 위한 LangChain 도구
-    - 객체 제거
-    - 영역 정리
-    """
     name: str = "object_erase"
-    description: str = """
-    Please use this tool when you want to clean, erase or delete certain objects from an image.
-    """
+    description: str = "Clean, erase or delete objects from image"
     return_direct: bool = True
     
-    def _run(self, args=None):
-        """
-        객체 제거 실행 함수
-        Args:
-            args: 사용되지 않음
-        Returns:
-            처리된 이미지 또는 에러 시 None
-        """
+    def _run(self, args: Any = None) -> Image.Image:
         try:
-            log_debug("Running ObjectEraseTool")
+            logger.debug("Running object erase")
             
-            # 세션 상태 검증
-            if "inference_image" not in st.session_state or "image_state" not in st.session_state:
-                raise ValueError("No image loaded in session state")
+            image = image_state.current_image
+            if image is None:
+                raise ValueError("No image loaded")
                 
-            pil_image = st.session_state["inference_image"][st.session_state["image_state"]]
-            np_image = np.array(pil_image)
-            
-            # 마스크 검증
-            if "mask" not in st.session_state or st.session_state["mask"] is None:
-                raise ValueError("No mask available. Please select an area using the drawing tool.")
+            mask = image_state.get("mask")
+            if mask is None:
+                raise ValueError("No mask selected")
                 
-            mask = st.session_state["mask"]
-            
-            # freedraw 모드에 따른 마스크 처리
-            if not st.session_state.get("freedraw", False):
+            if not image_state.get("freedraw"):
                 mask = dilate_mask(mask, kernel_size=5, iterations=6)
                 
-            device = get_device()
-            transform_pillow = object_erase(np_image, mask, device)
-            
-            if transform_pillow is None:
-                raise Exception("Object erase operation failed")
-                
-            log_debug("ObjectEraseTool completed successfully")
-            return transform_pillow
+            return object_erase(np.array(image), mask)
             
         except Exception as e:
-            st.error(f"Error in ObjectEraseTool: {str(e)}")
-            import traceback
-            st.error(f"Full error: {traceback.format_exc()}")
-            return None
-    
+            logger.error("Erase tool failed", exc_info=e)
+            raise
+
     def _arun(self, query: str):
-        """비동기 실행은 지원하지 않음"""
-        raise NotImplementedError("This tool does not support async")
+        raise NotImplementedError("Async not supported")

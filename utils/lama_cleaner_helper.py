@@ -1,162 +1,167 @@
 import io
-import os
-import sys
-from typing import List, Optional
+import hashlib
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Optional, Union, List
 from urllib.parse import urlparse
 import cv2
 from PIL import Image, ImageOps, PngImagePlugin
 import numpy as np
 import torch
-from loguru import logger
+import logging
 from torch.hub import download_url_to_file, get_dir
-import hashlib
+from utils.device_utils import get_device
 
-def md5sum(filename):
-    """
-    파일의 MD5 해시값을 계산하는 함수
-    
-    Args:
-        filename (str): 해시값을 계산할 파일 경로
-    
-    Returns:
-        str: 파일의 MD5 해시값
-    """
-    md5 = hashlib.md5()
-    with open(filename, "rb") as f:
-        for chunk in iter(lambda: f.read(128 * md5.block_size), b""):
-            md5.update(chunk)
-    return md5.hexdigest()
+logging.basicConfig(
+   level=logging.INFO,
+   format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+   handlers=[
+       logging.FileHandler('lama_cleaner.log'),
+       logging.StreamHandler()
+   ]
+)
+logger = logging.getLogger(__name__)
 
-def get_cache_path_by_url(url):
-    """
-    URL에 해당하는 로컬 캐시 경로를 반환하는 함수
-    
-    Args:
-        url (str): 모델 다운로드 URL
-    
-    Returns:
-        str: 로컬 캐시 파일 경로
-    """
-    parts = urlparse(url)
-    hub_dir = get_dir()
-    model_dir = os.path.join(hub_dir, "checkpoints")
-    if not os.path.isdir(model_dir):
-        os.makedirs(model_dir)
-    filename = os.path.basename(parts.path)
-    cached_file = os.path.join(model_dir, filename)
-    return cached_file
+class ModelError(Exception):
+   """모델 관련 에러"""
+   pass
 
-def download_model(url, model_md5: str = None):
-    """
-    모델 파일을 다운로드하고 MD5 검증을 수행하는 함수
-    
-    Args:
-        url (str): 모델 다운로드 URL
-        model_md5 (str, optional): 기대되는 MD5 해시값
-    
-    Returns:
-        str: 다운로드된 모델의 로컬 경로
-        
-    Raises:
-        SystemExit: MD5 검증 실패 시
-    """
-    cached_file = get_cache_path_by_url(url)
-    if not os.path.exists(cached_file):
-        sys.stderr.write('Downloading: "{}" to {}\n'.format(url, cached_file))
-        hash_prefix = None
-        download_url_to_file(url, cached_file, hash_prefix, progress=True)
-        
-        # MD5 검증 수행
-        if model_md5:
-            _md5 = md5sum(cached_file)
-            if model_md5 == _md5:
-                logger.info(f"Download model success, md5: {_md5}")
-            else:
-                try:
-                    os.remove(cached_file)
-                    logger.error(
-                        f"Model md5: {_md5}, expected md5: {model_md5}, wrong model deleted. Please restart lama-cleaner."
-                        f"If you still have errors, please try download model manually first https://lama-cleaner-docs.vercel.app/install/download_model_manually.\n"
-                    )
-                except:
-                    logger.error(
-                        f"Model md5: {_md5}, expected md5: {model_md5}, please delete {cached_file} and restart lama-cleaner."
-                    )
-                exit(-1)
+class ValidationError(Exception):
+   """검증 관련 에러"""
+   pass
 
-    return cached_file
+@dataclass 
+class ModelConfig:
+   """모델 설정"""
+   url: str
+   md5: Optional[str] = None
+   device: str = get_device()
+   model_dir: Optional[Path] = None
 
-def handle_error(model_path, model_md5, e):
-    """
-    모델 로딩 에러 처리 함수
-    
-    Args:
-        model_path (str): 모델 파일 경로
-        model_md5 (str): 기대되는 MD5 해시값
-        e (Exception): 발생한 예외
-        
-    Raises:
-        SystemExit: 항상 프로그램 종료
-    """
-    _md5 = md5sum(model_path)
-    if _md5 != model_md5:
-        try:
-            os.remove(model_path)
-            logger.error(
-                f"Model md5: {_md5}, expected md5: {model_md5}, wrong model deleted. Please restart lama-cleaner."
-                f"If you still have errors, please try download model manually first https://lama-cleaner-docs.vercel.app/install/download_model_manually.\n"
-            )
-        except:
-            logger.error(
-                f"Model md5: {_md5}, expected md5: {model_md5}, please delete {model_path} and restart lama-cleaner."
-            )
-    else:
-        logger.error(
-            f"Failed to load model {model_path},"
-            f"please submit an issue at https://github.com/Sanster/lama-cleaner/issues and include a screenshot of the error:\n{e}"
-        )
-    exit(-1)
+   def __post_init__(self):
+       if self.model_dir is None:
+           hub_dir = Path(get_dir())
+           self.model_dir = hub_dir / "checkpoints"
+           self.model_dir.mkdir(parents=True, exist_ok=True)
 
-def load_jit_model(url_or_path, device, model_md5: str):
-    """
-    TorchScript 모델을 로드하는 함수
-    
-    Args:
-        url_or_path (str): 모델 URL 또는 로컬 경로
-        device (str): 사용할 디바이스 ('cpu' 또는 'cuda')
-        model_md5 (str): 기대되는 MD5 해시값
-    
-    Returns:
-        torch.jit.ScriptModule: 로드된 모델
-        
-    Raises:
-        SystemExit: 모델 로딩 실패 시
-    """
-    if os.path.exists(url_or_path):
-        model_path = url_or_path
-    else:
-        model_path = download_model(url_or_path, model_md5)
+def compute_md5(file_path: Union[str, Path]) -> str:
+   path = Path(file_path)
+   if not path.exists():
+       raise FileNotFoundError(f"File not found: {path}")
+       
+   md5 = hashlib.md5()
+   try:
+       with path.open("rb") as f:
+           for chunk in iter(lambda: f.read(128 * md5.block_size), b""):
+               md5.update(chunk)
+       return md5.hexdigest()
+   except Exception as e:
+       logger.error(f"MD5 계산 실패: {str(e)}")
+       raise
 
-    logger.info(f"Loading model from: {model_path}")
-    try:
-        model = torch.jit.load(model_path, map_location="cpu").to(device)
-    except Exception as e:
-        handle_error(model_path, model_md5, e)
-    model.eval()
-    return model
+def get_cache_path_by_url(url: str, config: ModelConfig) -> Path:
+   parts = urlparse(url)
+   return config.model_dir / Path(parts.path).name
 
-def norm_img(np_img):
-    """
-    이미지 배열을 정규화하는 함수
-    
-    Args:
-        np_img (numpy.ndarray): 입력 이미지 배열
-    
-    Returns:
-        numpy.ndarray: 정규화된 이미지 배열 (채널 우선, 0-1 범위)
-    """
-    if len(np_img.shape) == 2:
-        np_img = np_img[:, :, np.newaxis]
-    np_img = np.transpose(np_img, (2, 0, 1))  # CHW 형식으로 변환
-    np_img = np_img.astype("float32") / 255   # 0-1 범위로 정규화
-    return np_img
+def validate_model(file_path: Path, expected_md5: Optional[str]) -> None:
+   if not expected_md5:
+       return
+   actual_md5 = compute_md5(file_path)
+   if actual_md5 != expected_md5:
+       try:
+           file_path.unlink(missing_ok=True)
+           raise ValidationError(
+               f"Model validation failed\n"
+               f"Expected MD5: {expected_md5}\n"
+               f"Actual MD5: {actual_md5}"
+           )
+       except Exception as e:
+           logger.error(f"모델 삭제 실패: {str(e)}")
+           raise
+
+def download_model(url: str, config: ModelConfig) -> Path:
+   cache_path = get_cache_path_by_url(url, config)
+   
+   if not cache_path.exists():
+       logger.info(f"Downloading model from {url} to {cache_path}")
+       try:
+           download_url_to_file(url, str(cache_path), None, progress=True)
+       except Exception as e:
+           logger.error(f"모델 다운로드 실패: {str(e)}")
+           raise ModelError(f"Failed to download model: {str(e)}")
+       
+   try:
+       validate_model(cache_path, config.md5)
+       logger.info(f"Model validated successfully: {cache_path}")
+       return cache_path
+   except ValidationError as e:
+       raise ModelError(str(e)) from e
+
+def load_jit_model(url_or_path: Union[str, Path], model_md5: Optional[str] = None) -> torch.jit.ScriptModule:
+   device = get_device()
+   config = ModelConfig(url=str(url_or_path), md5=model_md5, device=device)
+   
+   try:
+       if Path(url_or_path).exists():
+           model_path = Path(url_or_path)
+       else:
+           model_path = download_model(url_or_path, config)
+           
+       logger.info(f"Loading model from: {model_path}")
+       model = torch.jit.load(str(model_path), map_location="cpu").to(device)
+       model.eval()
+       return model
+       
+   except Exception as e:
+       logger.error(f"Model loading failed: {str(e)}")
+       raise ModelError(f"Failed to load model: {str(e)}")
+
+def norm_img(np_img: np.ndarray) -> np.ndarray:
+   try:
+       if not isinstance(np_img, np.ndarray):
+           raise ValueError("Input must be numpy array")
+           
+       if len(np_img.shape) == 2:
+           np_img = np_img[:, :, np.newaxis]
+           
+       if np_img.shape[2] not in [1, 3, 4]:
+           raise ValueError(f"Invalid number of channels: {np_img.shape[2]}")
+           
+       np_img = np.transpose(np_img, (2, 0, 1))
+       np_img = np_img.astype("float32") / 255.0
+       
+       return np_img
+       
+   except Exception as e:
+       logger.error(f"Image normalization failed: {str(e)}")
+       raise ValueError(f"Failed to normalize image: {str(e)}")
+
+@torch.no_grad()
+def process_image(
+   model: torch.jit.ScriptModule,
+   image: torch.Tensor,
+   mask: torch.Tensor,
+) -> torch.Tensor:
+   try:
+       device = get_device()
+       if not torch.is_tensor(image) or not torch.is_tensor(mask):
+           raise ValueError("Inputs must be torch tensors")
+           
+       image = image.to(device)
+       mask = mask.to(device)
+       
+       output = model(image, mask)
+       return output.cpu()
+       
+   except Exception as e:
+       logger.error(f"Image processing failed: {str(e)}")
+       raise ModelError(f"Failed to process image: {str(e)}")
+
+if __name__ == "__main__":
+   try:
+       test_url = "https://example.com/model.pth"
+       test_config = ModelConfig(url=test_url)
+       model = load_jit_model(test_url)
+       logger.info("Test completed successfully")
+   except Exception as e:
+       logger.error(f"Test failed: {str(e)}")
