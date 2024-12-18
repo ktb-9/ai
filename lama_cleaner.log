@@ -1,0 +1,1839 @@
+2024-12-17 11:44:47,329 - utils.agent - INFO - Successfully initialized PromptOptimizationAgent with model: gpt-4o-mini
+2024-12-17 11:45:04,828 - utils.agent - INFO - Successfully initialized PromptOptimizationAgent with model: gpt-4o-mini
+2024-12-17 11:47:33,652 - utils.agent - INFO - Successfully initialized PromptOptimizationAgent with model: gpt-4o-mini
+2024-12-17 11:48:09,743 - __main__ - INFO - Received files:
+2024-12-17 11:48:09,744 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 11:48:09,744 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 11:48:09,744 - __main__ - INFO - Action type: edit
+2024-12-17 11:48:11,945 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 11:48:11,960 - utils.agent - INFO - Successfully optimized prompt: Replace the medium-sized area in the middle center of the image with a man, ensuring he has a muted color palette and detailed texture that matches the surrounding dim, high contrast environment. The lighting should be consistent with the surrounding area, maintaining the same smooth texture and overall style for a seamless integration. Ensure the composition is photorealistic and high quality with sharp details.
+2024-12-17 11:49:59,923 - __main__ - INFO - Received files:
+2024-12-17 11:49:59,924 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 11:49:59,924 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 11:49:59,924 - __main__ - INFO - Action type: remove
+2024-12-17 11:49:59,959 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 11:50:00,307 - utils.lama_cleaner_helper - INFO - Model validated successfully: /Users/sagong-gwang-yeol/.cache/torch/hub/checkpoints/big-lama.pt
+2024-12-17 11:50:00,307 - utils.lama_cleaner_helper - INFO - Loading model from: /Users/sagong-gwang-yeol/.cache/torch/hub/checkpoints/big-lama.pt
+2024-12-17 11:50:37,388 - __main__ - INFO - Received files:
+2024-12-17 11:50:37,389 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 11:50:37,389 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 11:50:37,389 - __main__ - INFO - Action type: remove
+2024-12-17 11:50:37,427 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 11:50:50,262 - __main__ - INFO - Received files:
+2024-12-17 11:50:50,262 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 11:50:50,262 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 11:50:50,262 - __main__ - INFO - Action type: remove
+2024-12-17 11:50:50,300 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 11:51:00,519 - __main__ - INFO - Received files:
+2024-12-17 11:51:00,520 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 11:51:00,520 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 11:51:00,520 - __main__ - INFO - Action type: remove
+2024-12-17 11:51:00,558 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 11:51:11,527 - __main__ - INFO - Received files:
+2024-12-17 11:51:11,527 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 11:51:11,528 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 11:51:11,528 - __main__ - INFO - Action type: edit
+2024-12-17 11:51:11,545 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 11:54:50,984 - __main__ - INFO - Received files:
+2024-12-17 11:54:50,987 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 11:54:50,987 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 11:54:50,987 - __main__ - INFO - Action type: edit
+2024-12-17 11:54:52,904 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 11:54:52,923 - utils.agent - INFO - Successfully optimized prompt: Replace the large area in the middle center of the image with a man, ensuring he has a bright appearance with high contrast, muted colors, and detailed texture that matches the surrounding environment. The integration should be seamless, maintaining identical lighting conditions and a consistent color palette, while achieving ultra high quality and sharp details.
+2024-12-17 11:56:05,316 - __main__ - INFO - Received files:
+2024-12-17 11:56:05,317 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 11:56:05,317 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 11:56:05,317 - __main__ - INFO - Action type: remove
+2024-12-17 11:56:05,356 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 11:56:09,246 - __main__ - INFO - Received files:
+2024-12-17 11:56:09,247 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 11:56:09,247 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 11:56:09,247 - __main__ - INFO - Action type: remove
+2024-12-17 11:56:09,289 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 12:00:15,510 - __main__ - INFO - Received files:
+2024-12-17 12:00:15,512 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 12:00:15,512 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 12:00:15,513 - __main__ - INFO - Action type: edit
+2024-12-17 12:00:17,609 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 12:00:17,622 - utils.agent - INFO - Successfully optimized prompt: Replace the large area in the middle center of the image with a man, ensuring he has a detailed texture and muted colors that match the surrounding bright, high contrast environment. The lighting should be consistent with the existing dim, high contrast style, maintaining a coherent look throughout the scene. The final result should be ultra high quality with sharp details and proper depth integration.
+2024-12-17 12:02:37,367 - __main__ - INFO - Received files:
+2024-12-17 12:02:37,368 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 12:02:37,368 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 12:02:37,368 - __main__ - INFO - Action type: edit
+2024-12-17 12:02:39,150 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 12:02:39,162 - utils.agent - INFO - Successfully optimized prompt: Replace the large area in the middle center of the image with a male figure, ensuring it seamlessly integrates with the surrounding bright, high contrast, muted colors and detailed texture, while maintaining identical lighting conditions and a matching color tone for a photorealistic, ultra high quality result.
+2024-12-17 13:00:51,558 - __main__ - INFO - Received files:
+2024-12-17 13:00:51,560 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 13:00:51,560 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 13:00:51,560 - __main__ - INFO - Action type: edit
+2024-12-17 13:00:53,008 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 13:00:53,018 - utils.agent - INFO - Successfully optimized prompt: Replace the large area in the middle center of the image with a male figure, ensuring the new figure matches the bright, high contrast, muted colors and detailed texture of the surrounding environment, seamlessly integrated with identical lighting conditions and consistent color palette for a photorealistic and high-quality result.
+2024-12-17 14:12:07,068 - utils.agent - INFO - Successfully initialized PromptOptimizationAgent with model: gpt-4o-mini
+2024-12-17 14:12:08,746 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 14:12:08,759 - utils.agent - INFO - Successfully optimized prompt: Replace the medium-sized area in the middle center of the image with a male figure, ensuring it is seamlessly integrated with the surrounding dim, high contrast environment while maintaining the muted colors and detailed texture. The lighting should match the identical lighting condition of the surrounding area, and the overall composition should be photorealistic with ultra high quality and sharp details.
+2024-12-17 14:17:06,816 - utils.agent - INFO - Successfully initialized PromptOptimizationAgent with model: gpt-4o-mini
+2024-12-17 14:17:08,126 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 14:17:08,140 - utils.agent - INFO - Successfully optimized prompt: Replace the medium-sized area in the middle center of the image with a male figure, ensuring that the lighting matches the surrounding dim, high contrast environment, while maintaining the muted colors and detailed texture. The new figure should be seamlessly integrated, coherent with the scene, and exhibit ultra high quality with sharp details.
+2024-12-17 14:24:56,500 - utils.agent - INFO - Successfully initialized PromptOptimizationAgent with model: gpt-4o-mini
+2024-12-17 14:30:48,254 - __main__ - INFO - Received files:
+2024-12-17 14:30:48,254 - __main__ - INFO - Image: image.png, Content-Type: image/webp
+2024-12-17 14:30:48,255 - __main__ - INFO - Mask: mask.png, Content-Type: image/png
+2024-12-17 14:30:48,255 - __main__ - INFO - Action type: edit
+2024-12-17 14:30:49,594 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 14:30:49,610 - utils.agent - INFO - Successfully optimized prompt: Replace the medium-sized area in the middle center of the image with a man, ensuring he has a bright appearance that matches the high contrast and muted colors of the surrounding dim environment, while maintaining detailed texture and seamless integration with the scene.
+2024-12-17 14:34:50,532 - __main__ - INFO - Received files:
+2024-12-17 14:34:50,535 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 14:34:50,535 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 14:34:50,535 - __main__ - INFO - Action type: edit
+2024-12-17 14:34:52,403 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 14:34:52,413 - utils.agent - INFO - Successfully optimized prompt: Replace the medium-sized area in the middle center of the image with a man, ensuring he has a bright appearance that matches the high contrast and muted colors of the surrounding dim environment, while maintaining detailed texture and seamless integration with the scene. The lighting should be consistent with the surrounding area, and the overall composition must be photorealistic and high quality.
+2024-12-17 14:36:57,020 - __main__ - INFO - Received files:
+2024-12-17 14:36:57,023 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 14:36:57,023 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 14:36:57,023 - __main__ - INFO - Action type: edit
+2024-12-17 14:36:58,307 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 14:36:58,318 - utils.agent - INFO - Successfully optimized prompt: Replace the medium-sized area in the middle center of the image with a man, ensuring he has a bright appearance that matches the surrounding dim lighting and high contrast. Maintain muted colors and detailed texture consistent with the surrounding environment, seamlessly integrating him into the scene with ultra high quality and sharp details.
+2024-12-17 14:57:21,101 - utils.agent - INFO - Successfully initialized PromptOptimizationAgent with model: gpt-4o-mini
+2024-12-17 14:57:47,072 - __main__ - INFO - Received files:
+2024-12-17 14:57:47,073 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 14:57:47,073 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 14:57:47,073 - __main__ - INFO - Action type: edit
+2024-12-17 14:57:48,495 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 14:57:48,511 - utils.agent - INFO - Successfully optimized prompt: Replace the large area in the middle center of the image with a male figure, ensuring the figure has a bright, high contrast appearance with muted colors and detailed texture that seamlessly integrates with the surrounding environment, maintaining identical lighting conditions and a matching color tone for a photorealistic and high-quality result.
+2024-12-17 15:00:26,757 - __main__ - INFO - Received files:
+2024-12-17 15:00:26,760 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 15:00:26,760 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:00:26,760 - __main__ - INFO - Action type: remove
+2024-12-17 15:00:26,795 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 15:00:27,172 - utils.lama_cleaner_helper - INFO - Model validated successfully: /Users/sagong-gwang-yeol/.cache/torch/hub/checkpoints/big-lama.pt
+2024-12-17 15:00:27,172 - utils.lama_cleaner_helper - INFO - Loading model from: /Users/sagong-gwang-yeol/.cache/torch/hub/checkpoints/big-lama.pt
+2024-12-17 15:00:38,834 - __main__ - INFO - Received files:
+2024-12-17 15:00:38,834 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 15:00:38,835 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:00:38,835 - __main__ - INFO - Action type: remove
+2024-12-17 15:00:38,862 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 15:02:26,551 - __main__ - INFO - Received files:
+2024-12-17 15:02:26,553 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 15:02:26,553 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:02:26,553 - __main__ - INFO - Action type: remove
+2024-12-17 15:02:26,590 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 15:04:22,070 - __main__ - INFO - Received files:
+2024-12-17 15:04:22,071 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:04:22,072 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:04:22,072 - __main__ - INFO - Action type: remove
+2024-12-17 15:04:22,105 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 15:04:27,256 - __main__ - INFO - Received files:
+2024-12-17 15:04:27,257 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 15:04:27,257 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:04:27,257 - __main__ - INFO - Action type: edit
+2024-12-17 15:04:27,270 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:05:35,635 - __main__ - INFO - Received files:
+2024-12-17 15:05:35,638 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 15:05:35,638 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:05:35,638 - __main__ - INFO - Action type: remove
+2024-12-17 15:05:35,672 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 15:27:53,691 - __main__ - INFO - Received files:
+2024-12-17 15:27:53,694 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:27:53,694 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:27:53,694 - __main__ - INFO - Action type: edit
+2024-12-17 15:27:53,711 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:28:09,803 - utils.agent - INFO - Successfully initialized PromptOptimizationAgent with model: gpt-4o-mini
+2024-12-17 15:28:14,029 - __main__ - INFO - Received files:
+2024-12-17 15:28:14,029 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:28:14,030 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:28:14,030 - __main__ - INFO - Action type: edit
+2024-12-17 15:28:14,079 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:28:14,943 - __main__ - INFO - Received files:
+2024-12-17 15:28:14,944 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:28:14,944 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:28:14,944 - __main__ - INFO - Action type: edit
+2024-12-17 15:28:14,961 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:28:16,475 - __main__ - INFO - Received files:
+2024-12-17 15:28:16,475 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:28:16,475 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:28:16,475 - __main__ - INFO - Action type: edit
+2024-12-17 15:28:16,493 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:28:16,925 - __main__ - INFO - Received files:
+2024-12-17 15:28:16,926 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:28:16,926 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:28:16,926 - __main__ - INFO - Action type: edit
+2024-12-17 15:28:16,943 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:28:17,072 - __main__ - INFO - Received files:
+2024-12-17 15:28:17,073 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:28:17,073 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:28:17,073 - __main__ - INFO - Action type: edit
+2024-12-17 15:28:17,088 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:28:17,228 - __main__ - INFO - Received files:
+2024-12-17 15:28:17,229 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:28:17,229 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:28:17,229 - __main__ - INFO - Action type: edit
+2024-12-17 15:28:17,239 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:28:17,377 - __main__ - INFO - Received files:
+2024-12-17 15:28:17,377 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:28:17,378 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:28:17,378 - __main__ - INFO - Action type: edit
+2024-12-17 15:28:17,410 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:28:17,497 - __main__ - INFO - Received files:
+2024-12-17 15:28:17,497 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:28:17,497 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:28:17,497 - __main__ - INFO - Action type: edit
+2024-12-17 15:28:17,504 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:28:17,631 - __main__ - INFO - Received files:
+2024-12-17 15:28:17,631 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:28:17,632 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:28:17,632 - __main__ - INFO - Action type: edit
+2024-12-17 15:28:17,671 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:28:17,755 - __main__ - INFO - Received files:
+2024-12-17 15:28:17,755 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:28:17,755 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:28:17,755 - __main__ - INFO - Action type: edit
+2024-12-17 15:28:17,763 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:28:17,881 - __main__ - INFO - Received files:
+2024-12-17 15:28:17,881 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:28:17,881 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:28:17,881 - __main__ - INFO - Action type: edit
+2024-12-17 15:28:17,896 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:28:18,025 - __main__ - INFO - Received files:
+2024-12-17 15:28:18,026 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:28:18,026 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:28:18,026 - __main__ - INFO - Action type: edit
+2024-12-17 15:28:18,037 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:28:18,161 - __main__ - INFO - Received files:
+2024-12-17 15:28:18,161 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:28:18,162 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:28:18,162 - __main__ - INFO - Action type: edit
+2024-12-17 15:28:18,173 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:38:32,234 - __main__ - INFO - Received files:
+2024-12-17 15:38:32,235 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:38:32,235 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:38:32,235 - __main__ - INFO - Action type: edit
+2024-12-17 15:38:32,252 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:38:49,233 - __main__ - INFO - Received files:
+2024-12-17 15:38:49,233 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:38:49,233 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:38:49,233 - __main__ - INFO - Action type: edit
+2024-12-17 15:38:49,250 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:38:49,745 - __main__ - INFO - Received files:
+2024-12-17 15:38:49,746 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:38:49,746 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:38:49,746 - __main__ - INFO - Action type: edit
+2024-12-17 15:38:49,760 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:38:49,912 - __main__ - INFO - Received files:
+2024-12-17 15:38:49,912 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:38:49,912 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:38:49,912 - __main__ - INFO - Action type: edit
+2024-12-17 15:38:49,924 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:38:50,078 - __main__ - INFO - Received files:
+2024-12-17 15:38:50,078 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:38:50,078 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:38:50,078 - __main__ - INFO - Action type: edit
+2024-12-17 15:38:50,089 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:38:50,195 - __main__ - INFO - Received files:
+2024-12-17 15:38:50,195 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:38:50,195 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:38:50,195 - __main__ - INFO - Action type: edit
+2024-12-17 15:38:50,206 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:38:57,419 - utils.agent - INFO - Successfully initialized PromptOptimizationAgent with model: gpt-4o-mini
+2024-12-17 15:39:51,802 - __main__ - INFO - Received files:
+2024-12-17 15:39:51,803 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:39:51,803 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:39:51,803 - __main__ - INFO - Action type: edit
+2024-12-17 15:39:51,852 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:39:56,836 - __main__ - INFO - Received files:
+2024-12-17 15:39:56,836 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:39:56,836 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:39:56,836 - __main__ - INFO - Action type: remove
+2024-12-17 15:39:56,867 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 15:39:57,216 - utils.lama_cleaner_helper - INFO - Model validated successfully: /Users/sagong-gwang-yeol/.cache/torch/hub/checkpoints/big-lama.pt
+2024-12-17 15:39:57,216 - utils.lama_cleaner_helper - INFO - Loading model from: /Users/sagong-gwang-yeol/.cache/torch/hub/checkpoints/big-lama.pt
+2024-12-17 15:40:00,744 - __main__ - INFO - Received files:
+2024-12-17 15:40:00,746 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:40:00,746 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:40:00,746 - __main__ - INFO - Action type: remove
+2024-12-17 15:40:00,771 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 15:40:02,278 - __main__ - INFO - Received files:
+2024-12-17 15:40:02,279 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:40:02,279 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:40:02,279 - __main__ - INFO - Action type: remove
+2024-12-17 15:40:02,304 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 15:43:25,744 - __main__ - INFO - Received files:
+2024-12-17 15:43:25,744 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:43:25,744 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:43:25,745 - __main__ - INFO - Action type: edit
+2024-12-17 15:43:25,762 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 15:48:22,820 - __main__ - INFO - Received files:
+2024-12-17 15:48:22,822 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 15:48:22,822 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:48:22,822 - __main__ - INFO - Action type: edit
+2024-12-17 15:48:24,580 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 15:48:24,596 - utils.agent - INFO - Successfully optimized prompt: Replace the large area in the middle center of the image with a male figure, ensuring the new figure matches the bright, high contrast, muted colors and detailed texture of the surrounding environment, seamlessly integrated with identical lighting conditions and consistent color palette for a photorealistic and high-quality result.
+2024-12-17 15:50:06,732 - __main__ - INFO - Received files:
+2024-12-17 15:50:06,732 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 15:50:06,733 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:50:06,733 - __main__ - INFO - Action type: remove
+2024-12-17 15:50:06,795 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 15:50:06,798 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 15:50:08,749 - __main__ - INFO - Received files:
+2024-12-17 15:50:08,749 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 15:50:08,749 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:50:08,749 - __main__ - INFO - Action type: remove
+2024-12-17 15:50:08,792 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 15:50:08,792 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 15:50:09,239 - __main__ - INFO - Received files:
+2024-12-17 15:50:09,239 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 15:50:09,239 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:50:09,239 - __main__ - INFO - Action type: remove
+2024-12-17 15:50:09,302 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 15:50:09,302 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 15:50:09,362 - __main__ - INFO - Received files:
+2024-12-17 15:50:09,362 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 15:50:09,362 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:50:09,362 - __main__ - INFO - Action type: remove
+2024-12-17 15:50:09,410 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 15:50:09,410 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 15:50:09,533 - __main__ - INFO - Received files:
+2024-12-17 15:50:09,533 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 15:50:09,533 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:50:09,533 - __main__ - INFO - Action type: remove
+2024-12-17 15:50:09,589 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 15:50:09,590 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 15:50:09,872 - __main__ - INFO - Received files:
+2024-12-17 15:50:09,872 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 15:50:09,872 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:50:09,872 - __main__ - INFO - Action type: remove
+2024-12-17 15:50:09,935 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 15:50:09,936 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 15:50:37,742 - __main__ - INFO - Received files:
+2024-12-17 15:50:37,743 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 15:50:37,743 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:50:37,743 - __main__ - INFO - Action type: edit
+2024-12-17 15:50:39,151 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 15:50:39,163 - utils.agent - INFO - Successfully optimized prompt: Replace the medium-sized area in the middle center of the image with a car that features bright, soft, muted colors and detailed texture, ensuring it is seamlessly integrated with the surrounding style, maintaining identical lighting conditions and a matching color tone for a photorealistic and high-quality result.
+2024-12-17 15:50:40,546 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 205, in edit_object
+    edited = model(
+             ^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/diffusers/pipelines/stable_diffusion/pipeline_stable_diffusion_inpaint.py", line 1252, in __call__
+    latent_model_input = torch.cat([latent_model_input, mask, masked_image_latents], dim=1)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 64 but got size 512 for tensor number 2 in the list.
+2024-12-17 15:51:39,326 - __main__ - INFO - Received files:
+2024-12-17 15:51:39,327 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 15:51:39,327 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:51:39,327 - __main__ - INFO - Action type: edit
+2024-12-17 15:51:40,901 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 15:51:40,906 - utils.agent - INFO - Successfully optimized prompt: Replace the medium-sized area in the middle center of the image with a car that features bright, soft, muted colors and detailed texture, ensuring it is seamlessly integrated with the surrounding style, maintaining identical lighting conditions and a matching color tone for a photorealistic and high-quality result.
+2024-12-17 15:51:42,211 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 205, in edit_object
+    edited = model(
+             ^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/diffusers/pipelines/stable_diffusion/pipeline_stable_diffusion_inpaint.py", line 1252, in __call__
+    latent_model_input = torch.cat([latent_model_input, mask, masked_image_latents], dim=1)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 64 but got size 512 for tensor number 2 in the list.
+2024-12-17 15:54:28,929 - __main__ - INFO - Received files:
+2024-12-17 15:54:28,929 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 15:54:28,930 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 15:54:28,930 - __main__ - INFO - Action type: edit
+2024-12-17 15:54:31,483 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 15:54:31,488 - utils.agent - INFO - Successfully optimized prompt: Replace the medium-sized area in the middle center of the image with a car that features bright, soft, muted colors and a smooth texture, ensuring it is seamlessly integrated with the surrounding vibrant colors and smooth texture, while maintaining identical lighting conditions and a consistent color palette for a photorealistic and high-quality result.
+2024-12-17 15:54:32,779 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 205, in edit_object
+    edited = model(
+             ^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/diffusers/pipelines/stable_diffusion/pipeline_stable_diffusion_inpaint.py", line 1252, in __call__
+    latent_model_input = torch.cat([latent_model_input, mask, masked_image_latents], dim=1)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 64 but got size 512 for tensor number 2 in the list.
+2024-12-17 16:00:30,673 - __main__ - INFO - Received files:
+2024-12-17 16:00:30,677 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 16:00:30,677 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:00:30,677 - __main__ - INFO - Action type: remove
+2024-12-17 16:00:30,716 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:08:52,146 - __main__ - INFO - Received files:
+2024-12-17 16:08:52,148 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 16:08:52,148 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:08:52,148 - __main__ - INFO - Action type: edit
+2024-12-17 16:08:52,174 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 16:12:02,891 - __main__ - INFO - Received files:
+2024-12-17 16:12:02,894 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 16:12:02,899 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:12:02,899 - __main__ - INFO - Action type: remove
+2024-12-17 16:12:02,920 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:12:02,921 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:02,926 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:04,667 - __main__ - INFO - Received files:
+2024-12-17 16:12:04,668 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 16:12:04,668 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:12:04,668 - __main__ - INFO - Action type: remove
+2024-12-17 16:12:04,690 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:12:04,690 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:04,691 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:05,020 - __main__ - INFO - Received files:
+2024-12-17 16:12:05,020 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 16:12:05,027 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:12:05,027 - __main__ - INFO - Action type: remove
+2024-12-17 16:12:05,047 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:12:05,047 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:05,047 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:05,166 - __main__ - INFO - Received files:
+2024-12-17 16:12:05,166 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 16:12:05,166 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:12:05,166 - __main__ - INFO - Action type: remove
+2024-12-17 16:12:05,184 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:12:05,185 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:05,185 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:05,302 - __main__ - INFO - Received files:
+2024-12-17 16:12:05,302 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 16:12:05,302 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:12:05,302 - __main__ - INFO - Action type: remove
+2024-12-17 16:12:05,319 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:12:05,319 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:05,320 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:05,441 - __main__ - INFO - Received files:
+2024-12-17 16:12:05,441 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 16:12:05,441 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:12:05,441 - __main__ - INFO - Action type: remove
+2024-12-17 16:12:05,456 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:12:05,456 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:05,457 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:05,617 - __main__ - INFO - Received files:
+2024-12-17 16:12:05,617 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 16:12:05,617 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:12:05,618 - __main__ - INFO - Action type: remove
+2024-12-17 16:12:05,633 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:12:05,633 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:05,634 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:05,752 - __main__ - INFO - Received files:
+2024-12-17 16:12:05,753 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 16:12:05,753 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:12:05,753 - __main__ - INFO - Action type: remove
+2024-12-17 16:12:05,768 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:12:05,768 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:05,769 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:05,885 - __main__ - INFO - Received files:
+2024-12-17 16:12:05,886 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 16:12:05,886 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:12:05,886 - __main__ - INFO - Action type: remove
+2024-12-17 16:12:05,900 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:12:05,901 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:05,901 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:06,071 - __main__ - INFO - Received files:
+2024-12-17 16:12:06,071 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 16:12:06,071 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:12:06,071 - __main__ - INFO - Action type: remove
+2024-12-17 16:12:06,086 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:12:06,086 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:06,086 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:06,218 - __main__ - INFO - Received files:
+2024-12-17 16:12:06,218 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 16:12:06,218 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:12:06,218 - __main__ - INFO - Action type: remove
+2024-12-17 16:12:06,234 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:12:06,235 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:06,235 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:10,149 - __main__ - INFO - Received files:
+2024-12-17 16:12:10,150 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 16:12:10,150 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:12:10,150 - __main__ - INFO - Action type: remove
+2024-12-17 16:12:10,169 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:12:10,170 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:12:10,171 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 84, in _lama_cleaner
+    padded_mask[:h, :w] = mask
+    ~~~~~~~~~~~^^^^^^^^
+ValueError: could not broadcast input array from shape (512,512) into shape (683,519)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: could not broadcast input array from shape (512,512) into shape (683,519)
+2024-12-17 16:16:09,243 - __main__ - INFO - Received files:
+2024-12-17 16:16:09,245 - __main__ - INFO - Image: resized_image.png, Content-Type: image/png
+2024-12-17 16:16:09,245 - __main__ - INFO - Mask: resized_mask.png, Content-Type: image/png
+2024-12-17 16:16:09,245 - __main__ - INFO - Action type: remove
+2024-12-17 16:16:09,270 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:09,271 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:10,283 - __main__ - INFO - Received files:
+2024-12-17 16:16:10,283 - __main__ - INFO - Image: resized_image.png, Content-Type: image/png
+2024-12-17 16:16:10,283 - __main__ - INFO - Mask: resized_mask.png, Content-Type: image/png
+2024-12-17 16:16:10,283 - __main__ - INFO - Action type: remove
+2024-12-17 16:16:10,330 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:10,330 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:10,447 - __main__ - INFO - Received files:
+2024-12-17 16:16:10,447 - __main__ - INFO - Image: resized_image.png, Content-Type: image/png
+2024-12-17 16:16:10,447 - __main__ - INFO - Mask: resized_mask.png, Content-Type: image/png
+2024-12-17 16:16:10,447 - __main__ - INFO - Action type: remove
+2024-12-17 16:16:10,463 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:10,463 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:10,582 - __main__ - INFO - Received files:
+2024-12-17 16:16:10,583 - __main__ - INFO - Image: resized_image.png, Content-Type: image/png
+2024-12-17 16:16:10,583 - __main__ - INFO - Mask: resized_mask.png, Content-Type: image/png
+2024-12-17 16:16:10,583 - __main__ - INFO - Action type: remove
+2024-12-17 16:16:10,599 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:10,600 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:10,732 - __main__ - INFO - Received files:
+2024-12-17 16:16:10,733 - __main__ - INFO - Image: resized_image.png, Content-Type: image/png
+2024-12-17 16:16:10,733 - __main__ - INFO - Mask: resized_mask.png, Content-Type: image/png
+2024-12-17 16:16:10,733 - __main__ - INFO - Action type: remove
+2024-12-17 16:16:10,752 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:10,752 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:10,869 - __main__ - INFO - Received files:
+2024-12-17 16:16:10,870 - __main__ - INFO - Image: resized_image.png, Content-Type: image/png
+2024-12-17 16:16:10,870 - __main__ - INFO - Mask: resized_mask.png, Content-Type: image/png
+2024-12-17 16:16:10,870 - __main__ - INFO - Action type: remove
+2024-12-17 16:16:10,890 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:10,890 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:32,696 - __main__ - INFO - Received files:
+2024-12-17 16:16:32,696 - __main__ - INFO - Image: resized_image.png, Content-Type: image/png
+2024-12-17 16:16:32,696 - __main__ - INFO - Mask: resized_mask.png, Content-Type: image/png
+2024-12-17 16:16:32,696 - __main__ - INFO - Action type: remove
+2024-12-17 16:16:32,717 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:32,718 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:33,386 - __main__ - INFO - Received files:
+2024-12-17 16:16:33,386 - __main__ - INFO - Image: resized_image.png, Content-Type: image/png
+2024-12-17 16:16:33,386 - __main__ - INFO - Mask: resized_mask.png, Content-Type: image/png
+2024-12-17 16:16:33,386 - __main__ - INFO - Action type: remove
+2024-12-17 16:16:33,407 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:33,408 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:33,528 - __main__ - INFO - Received files:
+2024-12-17 16:16:33,528 - __main__ - INFO - Image: resized_image.png, Content-Type: image/png
+2024-12-17 16:16:33,528 - __main__ - INFO - Mask: resized_mask.png, Content-Type: image/png
+2024-12-17 16:16:33,528 - __main__ - INFO - Action type: remove
+2024-12-17 16:16:33,550 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:33,550 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:33,678 - __main__ - INFO - Received files:
+2024-12-17 16:16:33,679 - __main__ - INFO - Image: resized_image.png, Content-Type: image/png
+2024-12-17 16:16:33,679 - __main__ - INFO - Mask: resized_mask.png, Content-Type: image/png
+2024-12-17 16:16:33,679 - __main__ - INFO - Action type: remove
+2024-12-17 16:16:33,718 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:33,719 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:33,808 - __main__ - INFO - Received files:
+2024-12-17 16:16:33,808 - __main__ - INFO - Image: resized_image.png, Content-Type: image/png
+2024-12-17 16:16:33,808 - __main__ - INFO - Mask: resized_mask.png, Content-Type: image/png
+2024-12-17 16:16:33,808 - __main__ - INFO - Action type: remove
+2024-12-17 16:16:33,825 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:33,825 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:33,958 - __main__ - INFO - Received files:
+2024-12-17 16:16:33,958 - __main__ - INFO - Image: resized_image.png, Content-Type: image/png
+2024-12-17 16:16:33,958 - __main__ - INFO - Mask: resized_mask.png, Content-Type: image/png
+2024-12-17 16:16:33,958 - __main__ - INFO - Action type: remove
+2024-12-17 16:16:33,974 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:33,974 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:34,084 - __main__ - INFO - Received files:
+2024-12-17 16:16:34,084 - __main__ - INFO - Image: resized_image.png, Content-Type: image/png
+2024-12-17 16:16:34,084 - __main__ - INFO - Mask: resized_mask.png, Content-Type: image/png
+2024-12-17 16:16:34,084 - __main__ - INFO - Action type: remove
+2024-12-17 16:16:34,110 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:34,111 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:34,222 - __main__ - INFO - Received files:
+2024-12-17 16:16:34,222 - __main__ - INFO - Image: resized_image.png, Content-Type: image/png
+2024-12-17 16:16:34,222 - __main__ - INFO - Mask: resized_mask.png, Content-Type: image/png
+2024-12-17 16:16:34,222 - __main__ - INFO - Action type: remove
+2024-12-17 16:16:34,245 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:34,245 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:34,342 - __main__ - INFO - Received files:
+2024-12-17 16:16:34,342 - __main__ - INFO - Image: resized_image.png, Content-Type: image/png
+2024-12-17 16:16:34,342 - __main__ - INFO - Mask: resized_mask.png, Content-Type: image/png
+2024-12-17 16:16:34,342 - __main__ - INFO - Action type: remove
+2024-12-17 16:16:34,361 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:34,361 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:34,503 - __main__ - INFO - Received files:
+2024-12-17 16:16:34,503 - __main__ - INFO - Image: resized_image.png, Content-Type: image/png
+2024-12-17 16:16:34,503 - __main__ - INFO - Mask: resized_mask.png, Content-Type: image/png
+2024-12-17 16:16:34,503 - __main__ - INFO - Action type: remove
+2024-12-17 16:16:34,522 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:16:34,522 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (512, 512, 4), expected (H, W, 3)
+2024-12-17 16:18:57,582 - __main__ - INFO - Received files:
+2024-12-17 16:18:57,583 - __main__ - INFO - Image: resized_image.jpg, Content-Type: image/jpeg
+2024-12-17 16:18:57,583 - __main__ - INFO - Mask: resized_mask.jpg, Content-Type: image/jpeg
+2024-12-17 16:18:57,583 - __main__ - INFO - Action type: remove
+2024-12-17 16:18:57,596 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:19:00,819 - __main__ - INFO - Received files:
+2024-12-17 16:19:00,820 - __main__ - INFO - Image: resized_image.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:00,820 - __main__ - INFO - Mask: resized_mask.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:00,820 - __main__ - INFO - Action type: remove
+2024-12-17 16:19:00,829 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:19:02,966 - __main__ - INFO - Received files:
+2024-12-17 16:19:02,967 - __main__ - INFO - Image: resized_image.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:02,967 - __main__ - INFO - Mask: resized_mask.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:02,967 - __main__ - INFO - Action type: remove
+2024-12-17 16:19:02,972 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:19:04,446 - __main__ - INFO - Received files:
+2024-12-17 16:19:04,447 - __main__ - INFO - Image: resized_image.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:04,447 - __main__ - INFO - Mask: resized_mask.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:04,447 - __main__ - INFO - Action type: remove
+2024-12-17 16:19:04,452 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:19:05,430 - __main__ - INFO - Received files:
+2024-12-17 16:19:05,430 - __main__ - INFO - Image: resized_image.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:05,430 - __main__ - INFO - Mask: resized_mask.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:05,430 - __main__ - INFO - Action type: remove
+2024-12-17 16:19:05,438 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:19:08,012 - __main__ - INFO - Received files:
+2024-12-17 16:19:08,013 - __main__ - INFO - Image: resized_image.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:08,013 - __main__ - INFO - Mask: resized_mask.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:08,013 - __main__ - INFO - Action type: remove
+2024-12-17 16:19:08,018 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:19:08,962 - __main__ - INFO - Received files:
+2024-12-17 16:19:08,962 - __main__ - INFO - Image: resized_image.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:08,962 - __main__ - INFO - Mask: resized_mask.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:08,962 - __main__ - INFO - Action type: remove
+2024-12-17 16:19:08,970 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:19:09,872 - __main__ - INFO - Received files:
+2024-12-17 16:19:09,872 - __main__ - INFO - Image: resized_image.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:09,872 - __main__ - INFO - Mask: resized_mask.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:09,872 - __main__ - INFO - Action type: remove
+2024-12-17 16:19:09,877 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:19:10,711 - __main__ - INFO - Received files:
+2024-12-17 16:19:10,712 - __main__ - INFO - Image: resized_image.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:10,712 - __main__ - INFO - Mask: resized_mask.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:10,712 - __main__ - INFO - Action type: remove
+2024-12-17 16:19:10,719 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:19:11,503 - __main__ - INFO - Received files:
+2024-12-17 16:19:11,504 - __main__ - INFO - Image: resized_image.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:11,504 - __main__ - INFO - Mask: resized_mask.jpg, Content-Type: image/jpeg
+2024-12-17 16:19:11,504 - __main__ - INFO - Action type: remove
+2024-12-17 16:19:11,511 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:41:10,704 - __main__ - INFO - Received files:
+2024-12-17 16:41:10,705 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 16:41:10,705 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:41:10,705 - __main__ - INFO - Action type: edit
+2024-12-17 16:41:12,420 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 16:41:12,433 - utils.agent - INFO - Successfully optimized prompt: Replace the large area in the middle center of the image with a male figure, ensuring the new figure matches the bright, high contrast, muted colors and detailed texture of the surrounding environment, seamlessly integrated with identical lighting conditions and consistent color palette for a photorealistic and high-quality result.
+2024-12-17 16:42:44,551 - __main__ - INFO - Received files:
+2024-12-17 16:42:44,552 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 16:42:44,552 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:42:44,552 - __main__ - INFO - Action type: remove
+2024-12-17 16:42:44,613 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:42:44,617 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:17,835 - __main__ - INFO - Received files:
+2024-12-17 16:43:17,836 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 16:43:17,836 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:43:17,836 - __main__ - INFO - Action type: remove
+2024-12-17 16:43:17,898 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:17,898 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:37,508 - __main__ - INFO - Received files:
+2024-12-17 16:43:37,509 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 16:43:37,509 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:43:37,509 - __main__ - INFO - Action type: remove
+2024-12-17 16:43:37,548 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:43:54,387 - __main__ - INFO - Received files:
+2024-12-17 16:43:54,388 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 16:43:54,388 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:43:54,388 - __main__ - INFO - Action type: remove
+2024-12-17 16:43:54,452 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:54,452 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:57,846 - __main__ - INFO - Received files:
+2024-12-17 16:43:57,846 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 16:43:57,846 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:43:57,846 - __main__ - INFO - Action type: remove
+2024-12-17 16:43:57,910 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:57,910 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:58,347 - __main__ - INFO - Received files:
+2024-12-17 16:43:58,347 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 16:43:58,347 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:43:58,347 - __main__ - INFO - Action type: remove
+2024-12-17 16:43:58,406 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:58,407 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:58,704 - __main__ - INFO - Received files:
+2024-12-17 16:43:58,704 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 16:43:58,704 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:43:58,704 - __main__ - INFO - Action type: remove
+2024-12-17 16:43:58,769 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:58,769 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:59,101 - __main__ - INFO - Received files:
+2024-12-17 16:43:59,102 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 16:43:59,102 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:43:59,102 - __main__ - INFO - Action type: remove
+2024-12-17 16:43:59,167 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:59,168 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:59,325 - __main__ - INFO - Received files:
+2024-12-17 16:43:59,326 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 16:43:59,326 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:43:59,326 - __main__ - INFO - Action type: remove
+2024-12-17 16:43:59,399 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:59,400 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:59,500 - __main__ - INFO - Received files:
+2024-12-17 16:43:59,500 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 16:43:59,500 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:43:59,500 - __main__ - INFO - Action type: remove
+2024-12-17 16:43:59,550 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:59,551 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:59,680 - __main__ - INFO - Received files:
+2024-12-17 16:43:59,680 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 16:43:59,680 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:43:59,680 - __main__ - INFO - Action type: remove
+2024-12-17 16:43:59,731 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:43:59,731 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:44:00,098 - __main__ - INFO - Received files:
+2024-12-17 16:44:00,099 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 16:44:00,099 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:44:00,099 - __main__ - INFO - Action type: remove
+2024-12-17 16:44:00,163 - core.inference - ERROR - LaMa cleaning failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:44:00,163 - core.inference - ERROR - Object removal failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 61, in _lama_cleaner
+    raise ValueError(f"Invalid image shape: {image.shape}, expected (H, W, 3)")
+ValueError: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 154, in remove_object
+    return self._lama_cleaner(image, mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 135, in _lama_cleaner
+    raise RuntimeError(f"Cleaning error: {str(e)}")
+RuntimeError: Cleaning error: Invalid image shape: (1024, 768, 4), expected (H, W, 3)
+2024-12-17 16:44:34,786 - __main__ - INFO - Received files:
+2024-12-17 16:44:34,786 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 16:44:34,786 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:44:34,786 - __main__ - INFO - Action type: edit
+2024-12-17 16:44:36,236 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 16:44:36,252 - utils.agent - INFO - Successfully optimized prompt: Replace the large area in the middle center of the image with a car that features bright, soft, muted colors and detailed texture, ensuring it is seamlessly integrated with the surrounding style, maintaining identical lighting conditions and a consistent color palette for a photorealistic and high-quality result.
+2024-12-17 16:44:38,834 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 205, in edit_object
+    edited = model(
+             ^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/diffusers/pipelines/stable_diffusion/pipeline_stable_diffusion_inpaint.py", line 1252, in __call__
+    latent_model_input = torch.cat([latent_model_input, mask, masked_image_latents], dim=1)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 64 but got size 512 for tensor number 2 in the list.
+2024-12-17 16:46:33,601 - __main__ - INFO - Received files:
+2024-12-17 16:46:33,602 - __main__ - INFO - Image: 스크린샷 2024-12-06 오후 2.25.38.png, Content-Type: image/png
+2024-12-17 16:46:33,602 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:46:33,602 - __main__ - INFO - Action type: edit
+2024-12-17 16:46:35,392 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 16:46:35,396 - utils.agent - INFO - Successfully optimized prompt: Replace the large area in the middle center of the image with a photorealistic animal, ensuring it seamlessly integrates with the surrounding dim, high contrast environment featuring muted colors and detailed texture. Maintain identical lighting conditions, matching color tone, and same texture quality to create a coherent composition.
+2024-12-17 16:46:36,682 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 205, in edit_object
+    edited = model(
+             ^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/diffusers/pipelines/stable_diffusion/pipeline_stable_diffusion_inpaint.py", line 1252, in __call__
+    latent_model_input = torch.cat([latent_model_input, mask, masked_image_latents], dim=1)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 64 but got size 512 for tensor number 2 in the list.
+2024-12-17 16:47:30,349 - __main__ - INFO - Received files:
+2024-12-17 16:47:30,349 - __main__ - INFO - Image: a07a2df74cec7a5c8f4be4cacaae002d2876efdcd037b773e5d0d693f6b655fa.png, Content-Type: image/png
+2024-12-17 16:47:30,349 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:47:30,349 - __main__ - INFO - Action type: edit
+2024-12-17 16:47:31,974 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 16:47:31,976 - utils.agent - INFO - Successfully optimized prompt: Replace the large area in the middle center of the image with a car, ensuring it features bright, soft, vibrant colors and detailed texture that seamlessly integrates with the surrounding style, maintaining identical lighting conditions and a matching color tone for a photorealistic and high-quality result.
+2024-12-17 16:47:33,273 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 205, in edit_object
+    edited = model(
+             ^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/diffusers/pipelines/stable_diffusion/pipeline_stable_diffusion_inpaint.py", line 1252, in __call__
+    latent_model_input = torch.cat([latent_model_input, mask, masked_image_latents], dim=1)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 64 but got size 512 for tensor number 2 in the list.
+2024-12-17 16:47:43,485 - utils.agent - INFO - Successfully initialized PromptOptimizationAgent with model: gpt-4o-mini
+2024-12-17 16:47:59,464 - __main__ - INFO - Received files:
+2024-12-17 16:47:59,464 - __main__ - INFO - Image: a07a2df74cec7a5c8f4be4cacaae002d2876efdcd037b773e5d0d693f6b655fa.png, Content-Type: image/png
+2024-12-17 16:47:59,465 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:47:59,465 - __main__ - INFO - Action type: edit
+2024-12-17 16:48:01,878 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 16:48:01,889 - utils.agent - INFO - Successfully optimized prompt: Replace the large area in the middle center of the image with a car, ensuring it features bright, soft, vibrant colors and detailed texture that seamlessly integrates with the surrounding style, maintaining identical lighting conditions and a consistent color palette for a photorealistic and high-quality result.
+2024-12-17 16:48:07,553 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 205, in edit_object
+    edited = model(
+             ^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/diffusers/pipelines/stable_diffusion/pipeline_stable_diffusion_inpaint.py", line 1252, in __call__
+    latent_model_input = torch.cat([latent_model_input, mask, masked_image_latents], dim=1)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 64 but got size 512 for tensor number 2 in the list.
+2024-12-17 16:49:16,833 - __main__ - INFO - Received files:
+2024-12-17 16:49:16,834 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 16:49:16,834 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:49:16,834 - __main__ - INFO - Action type: edit
+2024-12-17 16:49:18,728 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 16:49:18,735 - utils.agent - INFO - Successfully optimized prompt: Replace the large area in the middle center of the image with a car that features bright, soft, muted colors and detailed texture, ensuring it is seamlessly integrated with the surrounding style, maintaining identical lighting conditions and matching color tones for a photorealistic and high-quality result.
+2024-12-17 16:49:19,288 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 205, in edit_object
+    edited = model(
+             ^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/diffusers/pipelines/stable_diffusion/pipeline_stable_diffusion_inpaint.py", line 1252, in __call__
+    latent_model_input = torch.cat([latent_model_input, mask, masked_image_latents], dim=1)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 64 but got size 512 for tensor number 2 in the list.
+2024-12-17 16:53:04,652 - __main__ - INFO - Received files:
+2024-12-17 16:53:04,653 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 16:53:04,653 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:53:04,653 - __main__ - INFO - Action type: edit
+2024-12-17 16:53:07,088 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 16:53:07,091 - utils.agent - INFO - Successfully optimized prompt: Replace the central large area of the image with a male figure, ensuring it seamlessly integrates with the surrounding bright, high contrast, and muted colors. Maintain the detailed texture and consistent color palette, matching the surrounding style while achieving ultra high quality and sharp details. Ensure correct perspective, accurate shadows and highlights, and proper depth integration for a photorealistic result.
+2024-12-17 16:54:37,803 - __main__ - INFO - Received files:
+2024-12-17 16:54:37,804 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 16:54:37,804 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:54:37,804 - __main__ - INFO - Action type: remove
+2024-12-17 16:54:37,842 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 16:54:38,206 - utils.lama_cleaner_helper - INFO - Model validated successfully: /Users/sagong-gwang-yeol/.cache/torch/hub/checkpoints/big-lama.pt
+2024-12-17 16:54:38,206 - utils.lama_cleaner_helper - INFO - Loading model from: /Users/sagong-gwang-yeol/.cache/torch/hub/checkpoints/big-lama.pt
+2024-12-17 16:54:45,865 - __main__ - INFO - Received files:
+2024-12-17 16:54:45,866 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 16:54:45,866 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 16:54:45,866 - __main__ - INFO - Action type: remove
+2024-12-17 16:54:45,905 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 17:18:24,448 - __main__ - INFO - Received files:
+2024-12-17 17:18:24,449 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 17:18:24,449 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 17:18:24,449 - __main__ - INFO - Action type: edit
+2024-12-17 17:18:25,985 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 17:18:25,995 - utils.agent - INFO - Successfully optimized prompt: Replace the large area in the middle center of the image with a car, ensuring it features bright, soft, muted colors and detailed texture that seamlessly integrates with the surrounding environment, maintaining identical lighting conditions and a matching color tone for a photorealistic and high-quality result.
+2024-12-17 17:18:29,572 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 205, in edit_object
+    edited = model(
+             ^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sagong-gwang-yeol/Desktop/ai/venv/lib/python3.11/site-packages/diffusers/pipelines/stable_diffusion/pipeline_stable_diffusion_inpaint.py", line 1252, in __call__
+    latent_model_input = torch.cat([latent_model_input, mask, masked_image_latents], dim=1)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 64 but got size 512 for tensor number 2 in the list.
+2024-12-17 17:22:23,616 - utils.agent - INFO - Successfully initialized PromptOptimizationAgent with model: gpt-4o-mini
+2024-12-17 17:22:23,637 - utils.agent - INFO - Successfully initialized PromptOptimizationAgent with model: gpt-4o-mini
+2024-12-17 17:23:32,498 - utils.agent - INFO - Successfully initialized PromptOptimizationAgent with model: gpt-4o-mini
+2024-12-17 17:23:32,520 - utils.agent - INFO - Successfully initialized PromptOptimizationAgent with model: gpt-4o-mini
+2024-12-17 17:23:37,213 - utils.agent - INFO - Successfully initialized PromptOptimizationAgent with model: gpt-4o-mini
+2024-12-17 17:23:43,713 - __main__ - INFO - Received files:
+2024-12-17 17:23:43,713 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 17:23:43,713 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 17:23:43,713 - __main__ - INFO - Action type: edit
+2024-12-17 17:23:43,721 - __main__ - INFO - Converting image from RGBA to RGB mode
+2024-12-17 17:23:43,785 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 17:24:10,063 - __main__ - INFO - Received files:
+2024-12-17 17:24:10,063 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 17:24:10,063 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 17:24:10,063 - __main__ - INFO - Action type: edit
+2024-12-17 17:24:10,064 - __main__ - INFO - Converting image from RGBA to RGB mode
+2024-12-17 17:24:11,471 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 17:24:11,484 - utils.agent - INFO - Successfully optimized prompt: Replace the medium-sized area in the middle center of the image with a car that features bright, soft, muted colors and detailed texture, ensuring it is seamlessly integrated with the surrounding style, matching the identical lighting condition and consistent color palette, while maintaining ultra high quality and sharp details.
+2024-12-17 17:25:43,745 - __main__ - INFO - Received files:
+2024-12-17 17:25:43,748 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 17:25:43,749 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 17:25:43,749 - __main__ - INFO - Action type: remove
+2024-12-17 17:25:43,808 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 17:25:44,163 - utils.lama_cleaner_helper - INFO - Model validated successfully: /Users/sagong-gwang-yeol/.cache/torch/hub/checkpoints/big-lama.pt
+2024-12-17 17:25:44,163 - utils.lama_cleaner_helper - INFO - Loading model from: /Users/sagong-gwang-yeol/.cache/torch/hub/checkpoints/big-lama.pt
+2024-12-17 17:30:31,500 - __main__ - INFO - Received files:
+2024-12-17 17:30:31,504 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 17:30:31,504 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 17:30:31,504 - __main__ - INFO - Action type: remove
+2024-12-17 17:30:31,505 - __main__ - INFO - Converting image from RGBA to RGB mode
+2024-12-17 17:30:31,569 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 17:38:05,514 - utils.agent - INFO - Successfully initialized PromptOptimizationAgent with model: gpt-4o-mini
+2024-12-17 17:41:13,904 - __main__ - INFO - Received files:
+2024-12-17 17:41:13,905 - __main__ - INFO - Image: IMG_0008.jpeg, Content-Type: image/jpeg
+2024-12-17 17:41:13,905 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 17:41:13,905 - __main__ - INFO - Action type: edit
+2024-12-17 17:41:15,780 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 17:41:15,796 - utils.agent - INFO - Successfully optimized prompt: Replace the large central area with a snowman, ensuring it has a bright, smooth texture and muted colors that match the surrounding environment. The snowman should be seamlessly integrated into the scene, maintaining consistent lighting and color tones, while exhibiting ultra high quality and sharp details. Ensure accurate shadows and highlights for proper depth integration, creating a photorealistic composition that harmonizes with the bright, soft, and muted colors of the surrounding area.
+2024-12-17 17:42:38,531 - __main__ - INFO - Received files:
+2024-12-17 17:42:38,532 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 17:42:38,532 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 17:42:38,532 - __main__ - INFO - Action type: remove
+2024-12-17 17:42:38,650 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 17:42:38,987 - utils.lama_cleaner_helper - INFO - Model validated successfully: /Users/sagong-gwang-yeol/.cache/torch/hub/checkpoints/big-lama.pt
+2024-12-17 17:42:38,987 - utils.lama_cleaner_helper - INFO - Loading model from: /Users/sagong-gwang-yeol/.cache/torch/hub/checkpoints/big-lama.pt
+2024-12-17 17:43:54,374 - __main__ - INFO - Received files:
+2024-12-17 17:43:54,376 - __main__ - INFO - Image: IMG_0008.jpeg, Content-Type: image/jpeg
+2024-12-17 17:43:54,376 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 17:43:54,376 - __main__ - INFO - Action type: edit
+2024-12-17 17:43:55,661 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 17:43:55,673 - utils.agent - INFO - Successfully optimized prompt: Replace the large central area with a snowman, ensuring it features a bright, high contrast appearance with muted colors and a smooth texture that seamlessly integrates with the surrounding bright, soft, muted colors and smooth texture. Maintain consistent lighting and color tone, while achieving ultra high quality and sharp details for a photorealistic effect.
+2024-12-17 17:46:01,720 - utils.agent - INFO - Successfully initialized PromptOptimizationAgent with model: gpt-4o-mini
+2024-12-17 17:46:28,542 - __main__ - INFO - Received files:
+2024-12-17 17:46:28,543 - __main__ - INFO - Image: 2024090723535660284_1.webp, Content-Type: image/webp
+2024-12-17 17:46:28,543 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 17:46:28,543 - __main__ - INFO - Action type: edit
+2024-12-17 17:46:30,945 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 17:46:30,960 - utils.agent - INFO - Successfully optimized prompt: Replace the medium-sized area in the middle center of the image with a snowman, ensuring it features soft, muted colors and a detailed texture that matches the surrounding dim, soft, muted colors and smooth texture. The snowman should be seamlessly integrated, maintaining consistent lighting and color tone, while exhibiting ultra high quality and sharp details to create a photorealistic effect.
+2024-12-17 17:48:09,801 - __main__ - INFO - Received files:
+2024-12-17 17:48:09,804 - __main__ - INFO - Image: IMG_0008.jpeg, Content-Type: image/jpeg
+2024-12-17 17:48:09,804 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 17:48:09,804 - __main__ - INFO - Action type: edit
+2024-12-17 17:48:11,213 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 17:48:11,226 - utils.agent - INFO - Successfully optimized prompt: Replace the large central area with a photorealistic human eye, ensuring it features bright, soft, muted colors and a smooth texture that seamlessly integrates with the surrounding environment. Maintain identical lighting conditions and a consistent color palette to achieve a harmonious blend with the image's overall style.
+2024-12-17 17:51:33,656 - __main__ - INFO - Received files:
+2024-12-17 17:51:33,657 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 17:51:33,657 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 17:51:33,657 - __main__ - INFO - Action type: edit
+2024-12-17 17:51:33,705 - core.inference - ERROR - Object editing failed
+Traceback (most recent call last):
+  File "/Users/sagong-gwang-yeol/Desktop/ai-test/ai/core/inference.py", line 176, in edit_object
+    raise ValueError("No masked area found")
+ValueError: No masked area found
+2024-12-17 17:52:25,343 - __main__ - INFO - Received files:
+2024-12-17 17:52:25,344 - __main__ - INFO - Image: IMG_0008.jpeg, Content-Type: image/jpeg
+2024-12-17 17:52:25,344 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 17:52:25,344 - __main__ - INFO - Action type: edit
+2024-12-17 17:52:26,959 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 17:52:26,976 - utils.agent - INFO - Successfully optimized prompt: Replace the large central area with a snowman, ensuring it features a bright, high contrast appearance with muted colors and a smooth texture that seamlessly integrates with the surrounding bright, soft, muted colors and smooth texture. Maintain consistent lighting and color tone, while achieving ultra high quality and sharp details for a photorealistic effect.
+2024-12-17 17:58:55,497 - __main__ - INFO - Received files:
+2024-12-17 17:58:55,498 - __main__ - INFO - Image: IMG_0008.jpeg, Content-Type: image/jpeg
+2024-12-17 17:58:55,498 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 17:58:55,499 - __main__ - INFO - Action type: edit
+2024-12-17 17:58:57,546 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-17 17:58:57,558 - utils.agent - INFO - Successfully optimized prompt: Replace the large central area with a snowman, ensuring it features a bright, high contrast appearance with muted colors and a smooth texture that seamlessly integrates with the surrounding bright, soft, muted colors and smooth texture. Maintain consistent lighting and color tones for a photorealistic and high-quality result.
+2024-12-17 18:00:15,597 - __main__ - INFO - Received files:
+2024-12-17 18:00:15,598 - __main__ - INFO - Image: blob, Content-Type: image/png
+2024-12-17 18:00:15,599 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 18:00:15,599 - __main__ - INFO - Action type: remove
+2024-12-17 18:00:15,715 - core.inference - INFO - Starting LaMa cleaning process
+2024-12-17 18:00:16,229 - utils.lama_cleaner_helper - INFO - Model validated successfully: /Users/sagong-gwang-yeol/.cache/torch/hub/checkpoints/big-lama.pt
+2024-12-17 18:00:16,230 - utils.lama_cleaner_helper - INFO - Loading model from: /Users/sagong-gwang-yeol/.cache/torch/hub/checkpoints/big-lama.pt
+2024-12-17 18:00:49,487 - __main__ - INFO - Received files:
+2024-12-17 18:00:49,488 - __main__ - INFO - Image: 32df8cb884bbe860d2e2526d72409fb640cc36c0c23859a9dc79326d59762acd.png, Content-Type: image/png
+2024-12-17 18:00:49,488 - __main__ - INFO - Mask: blob, Content-Type: image/png
+2024-12-17 18:00:49,488 - __main__ - INFO - Action type: remove
+2024-12-17 18:00:49,489 - __main__ - INFO - Converting image from RGBA to RGB mode
+2024-12-17 18:00:49,555 - core.inference - INFO - Starting LaMa cleaning process

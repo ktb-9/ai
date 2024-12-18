@@ -48,10 +48,14 @@ async def edit_image(
 
         # 1. 이미지 로드
         image_content = await image.read()
+        
         logger.debug(f"Image content length: {len(image_content)}")
                 
         try:
             img = Image.open(io.BytesIO(image_content))
+            if img.mode == 'RGBA':
+                logger.info("Converting image from RGBA to RGB mode")
+                img = img.convert('RGB')
         except Exception as e:
             logger.error(f"Image open error: {str(e)}")
             raise HTTPException(status_code=400, detail="Invalid image format")
@@ -113,4 +117,4 @@ async def health_check():
 
 if __name__ == "__main__":
    import uvicorn
-   uvicorn.run(app, host="0.0.0.0", port=8000)
+   uvicorn.run(app, host="0.0.0.0", port=5001)
