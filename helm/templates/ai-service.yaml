@@ -1,0 +1,12 @@
+# server service yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ai
+spec:
+  type: {{ .Values.ai.service.type }}
+  ports:
+    - port: {{ .Values.ai.service.port }}
+      targetPort: {{ .Values.ai.service.targetPort }}
+  selector:
+    app: ai
