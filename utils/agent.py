@@ -4,7 +4,6 @@ from PIL import Image
 import numpy as np
 import cv2
 from typing import Optional, Dict, Any
-from dotenv import load_dotenv
 import os
 import logging
 
@@ -21,9 +20,7 @@ class PromptOptimizationAgent:
             model_name: 사용할 OpenAI 모델 이름 (기본값: gpt-4o-mini)
             temperature: 생성 다양성 조절 (0에 가까울수록 결정적)
         """
-        load_dotenv()
-        
-        api_key = os.getenv("OPENAI_API_KEY")
+        api_key = os.environ.get("OPENAI_API_KEY")
         if not api_key:
             raise ValueError(
                 "OpenAI API key not found. Please set OPENAI_API_KEY in .env file"
